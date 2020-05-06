@@ -61,18 +61,57 @@ var movies = [
 ];
 
 // create showMovies function
-function showMovies(arrayOfMovies) {
-  const contentDiv = document.querySelector("#all-movies");
-  arrayOfMovies.forEach(function (movies) {
-    const movieTitle = document.createElement("p");
-    const movieDirector = document.createElement("p");
-    contentDiv.appendChild(movieTitle);
-    contentDiv.appendChild(movieDirector);
-    movieTitle.innerText = movies.title;
-    movieDirector.innerText = movies.director;
+/*
+function showMovies(movies) {
+  var totalMovies = document.querySelector("#movies-number");
+  totalMovies.innerText = movies.length;
+  movies.forEach((movie) => {
+    var paragraph = document.createElement("p");
+    var movieList = document.querySelector("#all-movies");
+    movieList.appendChild(paragraph);
+    paragraph.innerText = movie.title + " - " + movie.director;
   });
 }
-
+var myMovie = {
+  title: "The Great Escape",
+  director: "Bob",
+  type: "war",
+  haveWatched: true,
+};
+function addMovie(movie) {
+  movies.push(movie);
+}
+setTimeout(function () {
+  addMovie(myMovie);
+}, 2000);
+setTimeout(function () {
+  showMovies(movies);
+}, 3000);
+*/
 // create a new movie object for your favorite movie
 
 // create addMovies function
+
+function showMovies(movies) {
+  var totalMovies = document.querySelector("#movies-number");
+  totalMovies.innerText = movies.length;
+  movies.forEach((movie) => {
+    var paragraph = document.createElement("p");
+    var movieList = document.querySelector("#all-movies");
+    movieList.appendChild(paragraph);
+    paragraph.innerText = movie.title + " - " + movie.director;
+  });
+}
+var myMovie = {
+  title: "The Great Escape",
+  director: "Bob",
+  type: "war",
+  haveWatched: true,
+};
+function addMovie(movie, callback) {
+  setTimeout(() => {
+    movies.push(movie);
+    setTimeout(() => callback(movies), 1000);
+  }, 2000);
+}
+addMovie(myMovie, showMovies);
