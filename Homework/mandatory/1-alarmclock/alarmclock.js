@@ -8,7 +8,7 @@ function setAlarm() {
     if (countDown === 0) {
       clearInterval(setTimeRemainingId);
       playAlarm();
-      document.body.style.backgroundColor = "red";
+      document.body.style.backgroundColor = "yellow";
     }
   };
   var setTimeRemainingId = setInterval(setTimeRemaining, 1000);
