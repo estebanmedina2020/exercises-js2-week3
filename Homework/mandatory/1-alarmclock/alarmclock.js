@@ -1,4 +1,18 @@
-function setAlarm() {}
+function setAlarm() {
+  let alarmInput = document.querySelector("#alarmSet");
+  let timeRemaining = document.querySelector("#timeRemaining");
+  let countDown = alarmInput.value;
+  timeRemaining.innerText = "Time Remaining: 00:" + countDown;
+  let setTimeRemaining = function () {
+    timeRemaining.innerText = "Time Remaining: 00:" + --countDown;
+    if (countDown === 0) {
+      clearInterval(setTimeRemainingId);
+      playAlarm();
+      document.body.style.backgroundColor = "red";
+    }
+  };
+  var setTimeRemainingId = setInterval(setTimeRemaining, 1000);
+}
 
 // DO NOT EDIT BELOW HERE
 
