@@ -18,7 +18,7 @@ function change_image(num) {
   if (Image_Number < 0) {
     Image_Number = Image_Lenght;
   }
+  document.slideshow.src = Image[Image_Number];
 }
 
-document.slideshow.src = Image(Image_Number);
-return false;
+document.slideshow.src = Image[Image_Number];
