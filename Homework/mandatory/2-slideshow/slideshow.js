@@ -21,4 +21,10 @@ function change_image(num) {
   document.slideshow.src = Image[Image_Number];
 }
 
-document.slideshow.src = Image[Image_Number];
+function auto_previous() {
+  setInterval("change_image(-1)", 1000);
+}
+
+function auto_forward() {
+  setInterval("change_image(1)", 1000);
+}
