@@ -11,11 +11,14 @@ it to the #all-movies div.
 in the array "movies"
 
 Task 2
-Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
-Create a new function called "addMovie"
-- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
-- it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
-Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
+Amend your function above to only show movies after 1 second. Remember to use setTimeout
+to achieve that create a new function called "addMovie"
+- it receives a movie object as an argument - your can create a new object for your
+favorite movie following using the "myMovies" objects as a guide 
+- it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout
+to achieve that
+Call addMovies to add the new movie to the list and then showMovies to see the movies
+added on the screen.
 How many movies can you see on your page?
 
 Task 3
@@ -61,21 +64,21 @@ var movies = [
 ];
 
 // create showMovies function
-/*
+
 function showMovies(movies) {
-  var totalMovies = document.querySelector("#movies-number");
+  let totalMovies = document.querySelector("#movies-number");
   totalMovies.innerText = movies.length;
   movies.forEach((movie) => {
-    var paragraph = document.createElement("p");
-    var movieList = document.querySelector("#all-movies");
+    let paragraph = document.createElement("p");
+    let movieList = document.querySelector("#all-movies");
     movieList.appendChild(paragraph);
     paragraph.innerText = movie.title + " - " + movie.director;
   });
 }
-var myMovie = {
+let myMovie = {
   title: "The Great Escape",
-  director: "Bob",
-  type: "war",
+  director: "John Sturges",
+  type: "drama",
   haveWatched: true,
 };
 function addMovie(movie) {
@@ -87,11 +90,12 @@ setTimeout(function () {
 setTimeout(function () {
   showMovies(movies);
 }, 3000);
-*/
+
 // create a new movie object for your favorite movie
 
 // create addMovies function
 
+/*
 function showMovies(movies) {
   var totalMovies = document.querySelector("#movies-number");
   totalMovies.innerText = movies.length;
@@ -115,3 +119,4 @@ function addMovie(movie, callback) {
   }, 2000);
 }
 addMovie(myMovie, showMovies);
+*/
