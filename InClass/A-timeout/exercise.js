@@ -20,12 +20,12 @@ setTimeout(changeColor, 2000);
 */
 
 let background = document.querySelector("body");
-let colors = ["red", "green", "blue"];
+let colors = ["red", "green", "blue", "yellow"];
 let counter = 0;
 setInterval(function () {
   background.style.backgroundColor = colors[counter];
   counter++;
-  if (counter > 2) {
+  if (counter === colors.length) {
     counter = 0;
   }
 }, 2000);
